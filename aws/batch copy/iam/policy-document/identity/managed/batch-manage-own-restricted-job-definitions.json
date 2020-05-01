@@ -1,0 +1,55 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "UserRegistersJobDefinitionRestrictedToPOSIXUserDockerImageAndPrivelageLevelForGivenJob",
+      "Effect": "Allow",
+      "Action": [
+        "batch:RegisterJobDefinition"
+      ],
+      "Resource": [
+        "arn:aws:batch:<aws_region>:<aws_account_id>:job-definition/JobDefA_*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "batch:User": [
+            "nobody"
+          ],
+          "batch:Image": [
+            "<aws_account_id>.dkr.ecr.<aws_region>.amazonaws.com/myImage"
+          ]
+        },
+        "Bool": {
+          "batch:Privileged": "false"
+        }
+      }
+    },
+    {
+      "Sid": "UserDeregistersJobDefinitionForGivenJob",
+      "Effect": "Allow",
+      "Action": [
+        "batch:DeregisterJobDefinition"
+      ],
+      "Resource": [
+        "arn:aws:batch:<aws_region>:<aws_account_id>:job-definition/JobDefA_*"
+      ]
+    },
+    {
+      "Sid": "UserPassesGivenRoleToJobDefinition",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "arn:aws:iam::<aws_account_id>:role/MyBatchJobRole"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": [
+            "batch.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+aws s3 mb --region us-east-1 s3://com-nathanialmcconnell-vault

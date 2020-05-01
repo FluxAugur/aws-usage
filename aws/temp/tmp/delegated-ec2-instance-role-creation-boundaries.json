@@ -1,0 +1,50 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowResourcesViewing",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GenerateServiceLastAccessedDetails",
+        "iam:Get*",
+        "iam:List*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "RoleAndRolePolicyCreationBoundaryies",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:AttachRolePolicy",
+        "iam:DetachRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::fluxaugur:role/service-*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PermissionsBoundary": "arn:aws:iam::fluxaugur:policy/permissions-boundary/S3Boundaries"
+        }
+      }
+    },
+    {
+      "Sid": "AllowIntanceProfileCreation",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateInstanceProfile",
+        "iam:AddRoleToInstanceProfile",
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:DeleteInstanceProfile"
+      ],
+      "Resource": "arn:aws:iam::fluxaugur:instance-profile/service-*"
+    },
+    {
+      "Sid": "AllowResourceCleanup",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole",
+        "iam:DeleteRole"
+      ],
+      "Resource": "arn:aws:iam::fluxaugur:role/service-*"
+    }
+  ]
+}

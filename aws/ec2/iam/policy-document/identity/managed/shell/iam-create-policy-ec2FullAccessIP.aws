@@ -1,0 +1,1 @@
+aws iam create-policy --profile fluxaugur --policy-name ec2FullAccessIP --path /restricted/ip/ --policy-document file://../ec2-full-access-ip.json --description "User has full access to EC2 from IP 207.244.109.179."

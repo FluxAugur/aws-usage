@@ -1,0 +1,1 @@
+aws iam create-policy --profile fluxaugur --policy-name s3CRUDVaultBucket --path /vault/ --policy-document @s3-allow-crud-vault-bucket --description "Allows viewing and modification of vault bucket contents."

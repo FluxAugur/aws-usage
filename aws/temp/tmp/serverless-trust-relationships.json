@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": [
+          "apigateway.amazonaws.com",
+          "cloudformation.amazonaws.com",
+          "cloudwatch.amazonaws.com",
+          "lambda.amazonaws.com",
+          "logs.amazonaws.com"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}

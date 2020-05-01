@@ -1,0 +1,33 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowCreatePolicy",
+      "Effect": "Allow",
+      "Action": ["iam:CreatePolicy", "iam:CreatePolicyVersion", "iam:DeletePolicyVersion"],
+      "Resource": "arn:aws:iam::fluxaugur:policy/*/app-web-personal*"
+    },
+    {
+      "Sid": "AllowCreateRole",
+      "Effect": "Allow",
+      "Action": ["iam:CreateRole"],
+      "Resource": "arn:aws:iam::fluxaugur:role/*/app-web-personal*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PermissionsBoundary": "arn:aws:iam::fluxaugur:policy/permissions-boundary/RestrictRegionUSAZEastBoundary"
+        }
+      }
+    },
+    {
+      "Sid": "AllowAttachDetachRolePolicy",
+      "Effect": "Allow",
+      "Action": ["iam:AttachRolePolicy", "iam:DetachRolePolicy"],
+      "Resource": "arn:aws:iam::fluxaugur:role/*/app-web-personal*",
+      "Condition": {
+        "ArnEquals": {
+          "iam:PolicyARN": ["arn:aws:iam::fluxaugur:policy/*", "arn:aws:iam::aws:policy*"]
+        }
+      }
+    }
+  ]
+}

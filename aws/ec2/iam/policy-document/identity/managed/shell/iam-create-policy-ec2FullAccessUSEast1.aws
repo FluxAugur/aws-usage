@@ -1,0 +1,1 @@
+aws iaam create-policy --profile fluxaugur --policy-name EC2FullAccessUSEast1 --path /restriction/region/ --policy-document file://ec2/iam/policy-document/identity/managed/ec2-full-access-us-east-1.json --description "User has full access to EC2 in us-east-1 region."

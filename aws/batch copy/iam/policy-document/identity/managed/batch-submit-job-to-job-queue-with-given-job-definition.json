@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "UserSubmitsJobToJobQueueWithGivenJobDefinition",
+            "Effect": "Allow",
+            "Action": [
+                "batch:SubmitJob"
+            ],
+            "Resource": [
+                "arn:aws:batch:<aws_region>:<aws_account_id>:job-definition/JobDefA_*",
+                "arn:aws:batch:<aws_region>:<aws_account_id>:job-queue/*"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+aws iam create-policy --profile fluxaugur --policy-name FluxAugurBoundaries --policy-document @iam/policy-document/permissions-boundary/fluxaugur-boundaries.json --description "Allow full access to most services with ability to manage own password and access keys, view credentials in console, and do programmatic deploys."

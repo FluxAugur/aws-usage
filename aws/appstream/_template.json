@@ -1,0 +1,46 @@
+{
+  "Statement":[
+    {
+      "Effect":"effect",
+      "Action": [
+        "appstream:AssociateFleet",
+        {
+          "FleetName": "string",
+          "StackName": "string"
+        },
+        "appstrean:BatchAssociateUserStack",
+        {
+          "UserStackAssociation": [
+            {
+              "AuthenticationType": "string",
+              "SendEmailNotification": "boolean",
+              "StackName": "string",
+              "UserName": "string"
+            }
+          ]
+        },
+        "BatchDisassociateUserStack",
+        {
+          "UserStackAssociations": [
+            {
+              "AuthenticationType": "string",
+              "SendEmailNotifications": "boolean",
+              "StackName": "string",
+              "UserName": "string"
+            }
+          ]
+        },
+        "CopyImage",
+        {
+
+        }
+      ],
+      "Resource":"arn",
+      "Condition": {
+        "condition": {
+          "key":"value"
+        }
+      }
+    }
+  ]
+}

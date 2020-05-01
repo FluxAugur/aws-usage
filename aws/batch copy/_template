@@ -1,0 +1,30 @@
+{
+  "Statement":[{
+    "Effect":"effect",
+    "Action": [
+      "batch:CancelJob",
+      "batch:CreateComputeEnvironment",
+      "batch:CreateJobQueue",
+      "batch:DeleteComputeEnvironment",
+      "batch:DeleteJobQueue",
+      "batch:DeregisterJobDefinition",
+      "batch:DescribeComputeEnvironments",
+      "batch:DescribeJobDefinitions",
+      "batch:DescribJobQueues",
+      "batch:DescribeJobs",
+      "batch:ListJobs",
+      "batch:RegisterJobDefinition",
+      "batch:SubmitJob",
+      "batch:TerminateJob",
+      "batch:UpdateComputeEnvironment",
+      "batch:UpdateJobQueue"
+    ],
+    "Resource":"arn",
+    "Condition":{
+      "condition":{
+        "key":"value"
+        }
+      }
+    }
+  ]
+}

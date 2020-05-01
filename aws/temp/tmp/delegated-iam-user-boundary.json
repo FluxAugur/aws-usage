@@ -1,0 +1,79 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CreateOrChangeOnlyWithBoundary",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachUserPolicy",
+        "iam:CreateUser",
+        "iam:DeleteUserPolicy",
+        "iam:DetachUserPolicy",
+        "iam:PutUserPermissionsBoundary",
+        "iam:PutUserPolicy"
+      ],
+      "Resource": "*",
+      "Condition": {"StringEquals":
+        {"iam:PermissionsBoundary": "arn:aws:iam::fluxaugur:policy/permissions-boundary/FluxAugurBoundaries"}}
+    },
+    {
+      "Sid": "CloudWatchAndOtherIAMTasks",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:*",
+        "iam:CreateAccessKey",
+        "iam:CreateGroup",
+        "iam:CreateLoginProfile",
+        "iam:CreatePolicy",
+        "iam:DeleteGroup",
+        "iam:DeletePolicy",
+        "iam:DeletePolicyVersion",
+        "iam:DeleteUser",
+        "iam:GetAccountPasswordPolicy",
+        "iam:GetGroup",
+        "iam:GetLoginProfile",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRolePolicy",
+        "iam:GetUser",
+        "iam:GetUserPolicy",
+        "iam:ListAttachedRolePolicies",
+        "iam:ListAttachedUserPolicies",
+        "iam:ListEntitiesForPolicy",
+        "iam:ListGroups",
+        "iam:ListGroupsForUser",
+        "iam:ListPolicies",
+        "iam:ListPolicyVersions",
+        "iam:ListRolePolicies",
+        "iam:ListUserPolicies",
+        "iam:ListUsers",
+        "iam:SetDefaultPolicyVersion",
+        "iam:SimulateCustomPolicy",
+        "iam:SimulatePrincipalPolicy",
+        "iam:UpdateGroup",
+        "iam:UpdateUser"
+      ],
+      "NotResource": "arn:aws:iam::fluxaugur:user/fluxaugur"
+    },
+    {
+      "Sid": "NoBoundaryPolicyEdit",
+      "Effect": "Deny",
+      "Action": [
+        "iam:CreatePolicyVersion",
+        "iam:DeletePolicy",
+        "iam:DeletePolicyVersion",
+        "iam:SetDefaultPolicyVersion"
+      ],
+      "Resource": [
+        "arn:aws:iam::fluxaugur:policy/permissions-boundary/FluxAugurBoundaries",
+        "arn:aws:iam::fluxaugur:policy/permissions-boundary/DelegatedIAMUserBoundary"
+      ]
+    },
+    {
+      "Sid": "NoBoundaryUserDelete",
+      "Effect": "Deny",
+      "Action": "iam:DeleteUserPermissionsBoundary",
+      "Resource": "*"
+    }
+  ]
+}

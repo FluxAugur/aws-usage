@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "UserCRUDUser",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateLoginProfile",
+        "iam:CreateUser",
+        "iam:CreateVirtualMFADevice",
+        "iam:DeleteLoginProfile",
+        "iam:DeleteUser",
+        "iam:EnableVirtualMFADevice",
+        "iam:GetGroup",
+        "iam:ListUsers",
+        "iam:ListGroups",
+        "iam:UpdateLoginProfile",
+        "iam:UpdateUser"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "UserViewsAccount",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetAccount",
+        "iam:ListAccount"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::096188391785:user/vault/vault-storage-accessor"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+

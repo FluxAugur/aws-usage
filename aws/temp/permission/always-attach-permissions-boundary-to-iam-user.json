@@ -1,0 +1,44 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateAccessKey",
+        "iam:DeleteAccessKey",
+        "iam:DeleteUser",
+        "iam:ListAccessKeys",
+        "iam:ListAttachedUserPolicies",
+        "iam:ListGroupsForUser",
+        "iam:ListUserPolicies",
+        "iam:RemoveUserFromGroup"
+      ],
+      "Resource": [
+        "arn:aws:iam::fluxaugur:user/vault-*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachUserPolicy",
+        "iam:CreateUser",
+        "iam:DeleteUserPolicy",
+        "iam:DetachUserPolicy",
+        "iam:PutUserPolicy"
+      ],
+      "Resource": [
+        "arn:aws:iam::fluxaugur:user/vault-*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "iam:PermissionsBoundary": [
+            "arn:aws:iam::fluxaugur:policy/permissions-boundary/RestrictRegionUSAZ1Boundary",
+            "arn:aws:iam::fluxaugur:policy/permissions-boundary/RestrictRegionUSAZ2Boundary",
+            "arn:aws:iam::fluxaugur:policy/permissions-boundary/RestrictRegionUSAZEastBoundary",
+            "arn:aws:iam::fluxaugur:policy/permissions-boundary/RestrictRegionUSAZWestBoundary"
+          ]
+        }
+      }
+    }
+  ]
+}

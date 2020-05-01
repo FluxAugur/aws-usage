@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "UserAccessRestrictedToIP207o244o109o179",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:*"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "207.244.109.179"
+        }
+      }
+    }
+  ]
+}

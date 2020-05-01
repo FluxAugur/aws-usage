@@ -1,0 +1,287 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "UserBoundedByAllowedServices",
+      "Effect": "Allow",
+      "Action": [
+        "autoscaling:*",
+        "batch:*",
+        "ec2:*",
+        "ec2messages:*",
+        "elasticbeanstalk:*",
+        "ecr:*",
+        "ecs:*",
+        "eks:*",
+        "elasticloadbalancing:*",
+        "lambda:*",
+        "lightsail:*",
+        "outposts:*",
+        "serverlessrepo:*",
+
+
+        "backup:*",
+        "elasticfilesystem:*",
+        "fsx:*",
+        "glacier:*",
+        "importexport:*",
+        "s3:*",
+        "snowball:*",
+
+
+        "dynamodb:*",
+        "elasticache:*",
+        "qldb:*",
+        "rds:*",
+        "redshift:*",
+        "sdb:*",
+        "autoscaling-plans:*",
+
+
+        "cloud9:*",
+        "codebuild:*",
+        "codecommit:*",
+        "codedeploy:*",
+        "codepipeline:*",
+        "codestar:*",
+        "xray:*",
+
+
+        "acm:*",
+        "acm-pca:*",
+        "artifact:*",
+        "cloudhsm:*",
+        "cognito-identity:*",
+        "cognito-idp:*",
+        "cognito-sync:*",
+        "detective:*",
+        "firewallmanager",
+        "guardduty:*",
+        "inspector:*",
+        "kms:*",
+        "macie:*",
+        "ram:*",
+        "secretsmanager:*",
+        "securityhub:*",
+        "sso:*",
+        "sts:*",
+        "shield:*",
+        "waf:*",
+        "wafv2:*",
+
+
+        "codeguru:*",
+        "comprehend:*",
+        "deepcomposer:*",
+        "deepracer:*",
+        "forecast:*",
+        "groundtruthlabeling:*",
+        "kendra:*",
+        "lex:*",
+        "machinelearning:*",
+        "personalize:*",
+        "polly:*",
+        "rekognition:*",
+        "sagemaker:*",
+        "textract:*",
+        "transcribe:*",
+        "translate:*",
+
+
+        "application-autoscaling:*",
+        "appconfig:*",
+        "chatbot:*",
+        "cloudformation:*",
+        "cloudtrail:*",
+        "cloudwatch:*",
+        "config:*",
+        "health:*",
+        "opsworks:*",
+        "opsworks-cm:*",
+        "organizations:*",
+        "resource-groups:*",
+        "servicecatalog:*",
+        "trustedadvisor:*",
+        "wellarchitected:*",
+
+
+        "amplify:*",
+        "devicefarm:*",
+
+
+        "apigateway:*",
+        "appmesh:*",
+        "cloudfront:*",
+        "directconnect:*",
+        "globalaccelerator:*",
+        "networkmanager:*",
+
+
+        "mediaconnect:*",
+        "mediaconvert:*",
+        "medialive:*",
+        "mediapackage:*",
+        "mediapackage-vod:*",
+        "mediastore:*",
+        "mediatailor:*",
+        "kinesis:*",
+
+
+        "athena:*",
+        "dataexchange:*",
+        "datapipeline:*",
+        "elasticsearch:*",
+        "glue:*",
+        "kinesisanalytics:*",
+        "firehose:*",
+        "lakeformation:*",
+        "quicksight:*",
+
+
+        "appflow:*",
+        "mq:*",
+        "sns:*",
+        "sqs:*",
+        "ssm:*",
+        "ssmmessages:*",
+        "swf:*",
+
+
+        "chime:*",
+        "workmail:*",
+
+
+        "groundstation:*",
+
+
+        "greengrass:*",
+        "iot:*",
+        "iotanalytics:*",
+        "iotevents:*",
+        "iotsitewise:*",
+        "iotthingsgraph:*",
+        "freertos:*",
+
+
+        "robomaker:*",
+
+
+        "managedblockchain:*",
+
+
+        "gamelift:*",
+
+
+        "sumerian:*",
+
+
+        "iq:*",
+        "support:*",
+
+
+        "connect:*",
+        "ses:*",
+
+
+        "appstream:*",
+        "wam:*",
+        "workdocs:*",
+        "worklink:*",
+        "workspaces:*",
+
+
+        "aws-marketplace:*",
+        "aws-marketplace-management:*",
+
+
+
+
+
+
+        "servicediscovery:*",
+        "wam:*",
+        "iot1click:*",
+
+        "a4b:*",
+        "account:*",
+        "appmeshpreview;*",
+        "aws-portal:*",
+        "budgets:*",
+        "clouddirectory:*",
+        "ce:*",
+        "comprehendmedical:*",
+        "cur:*",
+        "datasync:*",
+        "dax:*",
+        "dbqms:*",
+        "deeplens:*",
+        "discovery:*",
+        "dms:*",
+        "ds:*",
+        "elasticmapreduce:*",
+        "elastictranscoder:*",
+        "es:*",
+        "events:*",
+        "fms:*",
+        "kinesisvideo:*",
+        "launchwizard:*",
+        "licensemanager:*",
+        "logs:*",
+        "mechanicalturk:*",
+        "mgh:*",
+        "mobileanalytics:*",
+        "mobilehub:*",
+        "mobiletargeting:*",
+        "pricing:*",
+        "rds-iam-authentication:*",
+        "savingsplans:*",
+        "servicequotas:*",
+        "signer:*",
+        "states:*",
+        "storagegateway:*",
+        "tag:*",
+        "transfer:*",
+        "waf-regional:*"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "RolePassedForProgrammaticAccess",
+      "Effect": "Allow",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "UserAccessesConsoleForCredentials",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GetAccountPasswordPolicy",
+        "iam:ListUsers"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "UserManagesOwnPasswordAndAccessKeys",
+      "Effect": "Allow",
+      "Action": [
+        "iam:*AccessKey*",
+        "iam:*ServiceSpecificCredential*",
+        "iam:*MFA*",
+        "iam:*SigningCertificate*",
+        "iam:ChangePassword",
+        "iam:GetUser"
+      ],
+      "Resource": [
+        "arn:aws:iam::fluxaugur:user/${aws:username}"
+      ]
+    }
+  ]
+}
